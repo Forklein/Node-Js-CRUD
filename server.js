@@ -34,7 +34,16 @@ app.use('/img', express.static(path.resolve(__dirname, 'assets/img')));
 app.use('/js', express.static(path.resolve(__dirname, 'assets/js')));
 
 app.get('/', (req, res) => {
-    res.render('index')
+    res.render('index', test = [
+        {
+            name: 'peppe',
+            surname: 'pisani'
+        },
+        {
+            name: 'forklein',
+            surname: 'test'
+        }
+    ]);
 })
 
 app.listen(PORT, () => { console.log(`Server is running on http://localhost:${PORT}`) });

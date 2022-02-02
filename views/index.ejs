@@ -14,6 +14,16 @@
 
         <%- contentFor('section') %>
             <h2>Test 2</h2>
+
+            <% test.forEach((element)=>
+                { %>
+                <li>
+                    <%= element.name %>
+                </li>
+                <li>
+                    <%= element.surname %>
+                </li>
+                <% }) %>
 </body>
 
 </html>
