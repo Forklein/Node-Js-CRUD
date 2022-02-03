@@ -44,6 +44,6 @@ app.get('/', (req, res) => {
             surname: 'test'
         }
     ]);
-})
+});
 
 app.listen(PORT, () => { console.log(`Server is running on http://localhost:${PORT}`) });

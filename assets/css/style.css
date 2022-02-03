@@ -1,4 +1,5 @@
-body{
-    background-color: aqua;
-    height: 100vh;
+@import "bootstrap.min.css";
+body {
+  background: linear-gradient(#e66465, #9198e5);
+  height: 100vh;
 }
