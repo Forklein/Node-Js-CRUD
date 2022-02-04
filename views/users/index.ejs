@@ -16,7 +16,7 @@
       <td><%= user.name %></td>
       <td><%= user.email %></td>
       <td><%= user.gender %></td>
-      <td><%= user.status %></td>
+      <td><%= user.status %> <i class="fas fa-circle <%- ((user.status) === "1") ? 'text-success' : 'text-danger' %>"></i></td>
     </tr>
     <% }) %>
   </tbody>
