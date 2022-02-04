@@ -1,4 +1,4 @@
-//#Express
+//# Express
 const express = require('express');
 //#For ENV
 const dotenv = require('dotenv');
@@ -8,6 +8,8 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 //#For use layouts
 const expressLayouts = require('express-ejs-layouts');
+//# For router
+const route = require('./server/routes/router');
 
 const path = require('path');
 
@@ -33,16 +35,9 @@ app.use('/css', express.static(path.resolve(__dirname, 'assets/css')));
 app.use('/img', express.static(path.resolve(__dirname, 'assets/img')));
 app.use('/js', express.static(path.resolve(__dirname, 'assets/js')));
 
-app.get('/', (req, res) => {
-    res.redirect('/users');
-})
 
-app.get('/users', (req, res) => {
-    res.render('users');
-});
+//! Use Router
+app.use(route);
 
-app.get('/users/create', (req, res) => {
-    res.render('users/create');
-});
 
 app.listen(PORT, () => { console.log(`Server is running on http://localhost:${PORT}`) });
