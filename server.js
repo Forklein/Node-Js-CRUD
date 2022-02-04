@@ -10,6 +10,8 @@ const bodyParser = require('body-parser');
 const expressLayouts = require('express-ejs-layouts');
 //# For router
 const route = require('./server/routes/router');
+//# Connect DB MONGO
+const connectDB = require('./server/database/connection');
 
 const path = require('path');
 
@@ -35,6 +37,8 @@ app.use('/css', express.static(path.resolve(__dirname, 'assets/css')));
 app.use('/img', express.static(path.resolve(__dirname, 'assets/img')));
 app.use('/js', express.static(path.resolve(__dirname, 'assets/js')));
 
+//!connect DB
+connectDB();
 
 //! Use Router
 app.use(route);
