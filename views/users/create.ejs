@@ -1,0 +1,26 @@
+<%-contentFor('title')%>Create
+<%-contentFor('section')%>
+<form>
+  <div class="mb-3">
+    <label for="name" class="form-label">Name</label>
+    <input type="text" class="form-control" id="name" name="name">
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Name</label>
+    <input type="email" class="form-control" id="email" name="email">
+  </div>
+  <div class="mb-3">
+    <label for="gender" class="form-label">Name</label>
+    <select name="gender" id="gender" class="form-select">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label for="status" class="form-label">Name</label>
+    <input type="radio" name="status" id="status" value="active">
+    <input type="radio" name="status" id="status" value="active">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+  <a href="/users" class="btn btn-primary">Back</a>
+</form>

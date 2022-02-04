@@ -25,7 +25,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs')
 // app.set('/views', path.resolve(__dirname, 'views/ejs'));
 //!use default layouts
-app.set('layout', 'layouts/app');
+app.set('layout', 'layout/app');
 
 //!load assets
 app.use('/css', express.static(path.resolve(__dirname, 'assets/css')));
@@ -38,16 +38,11 @@ app.get('/', (req, res) => {
 })
 
 app.get('/users', (req, res) => {
-    res.render('index', test = [
-        {
-            name: 'peppe',
-            surname: 'pisani'
-        },
-        {
-            name: 'forklein',
-            surname: 'test'
-        }
-    ]);
+    res.render('users');
+});
+
+app.get('/users/create', (req, res) => {
+    res.render('users/create');
 });
 
 app.listen(PORT, () => { console.log(`Server is running on http://localhost:${PORT}`) });
