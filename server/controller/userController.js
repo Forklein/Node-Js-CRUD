@@ -22,8 +22,10 @@ exports.create = (req, res) => {
         })
 }
 
-exports.find = (req, res) => {
-
+exports.find = async (req, res) => {
+    const user = Userdb.find();
+    const response = await user;
+    return res.send(response);
 }
 
 exports.update = (req, res) => {

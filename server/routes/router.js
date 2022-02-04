@@ -15,6 +15,7 @@ route.get('/users/create', services.createRender);
 
 //API
 
+route.get('/api/users', userController.find);
 route.post('/api/users/create', userController.create);
 
 module.exports = route;
