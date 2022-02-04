@@ -2,7 +2,6 @@
 <%-contentFor('section')%>
 <a href="/users/create" class="btn btn-primary">Add New user <i class="fas fa-user-plus"></i></a>
 <table class="table table-dark table-hover mt-2">
-  <% users.forEach((user) => { %>
   <thead>
     <tr>
       <th>Name</th>
@@ -12,12 +11,13 @@
     </tr>
   </thead>
   <tbody>
+    <% users.forEach(user => { %>
     <tr>
-      <td><%- user.name %></td>
-      <td><%- user.email %></td>
-      <td><%- user.gender %></td>
-      <td><%- user.status %></td>
+      <td><%= user.name %></td>
+      <td><%= user.email %></td>
+      <td><%= user.gender %></td>
+      <td><%= user.status %></td>
     </tr>
+    <% }) %>
   </tbody>
-  <% }) %>
 </table>

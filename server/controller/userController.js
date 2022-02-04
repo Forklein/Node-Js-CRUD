@@ -23,8 +23,8 @@ exports.create = (req, res) => {
 }
 
 exports.find = async (req, res) => {
-    const user = Userdb.find();
-    const response = await user;
+    const users = Userdb.find();
+    const response = await users;
     return res.send(response);
 }
 
