@@ -1,6 +1,6 @@
 <%-contentFor('title')%>Create
 <%-contentFor('section')%>
-<form action="/users/create" method="post">
+<form method="POST" action="http://localhost:3000/api/users/create">
   <div class="mb-3">
     <label for="name" class="form-label">Name</label>
     <input type="text" class="form-control" id="name" name="name">
@@ -12,19 +12,19 @@
   <div class="mb-3">
     <label for="gender" class="form-label">Name</label>
     <select name="gender" id="gender" class="form-select">
-      <option value="male">Male</option>
-      <option value="female">Female</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
     </select>
   </div>
   <div class="mb-3">
     Status
     <div class="form-check">
       <label class="form-check-label" for="active">Active</label>
-      <input class="form-check-input" type="radio" name="status" id="active" checked>
+      <input class="form-check-input" type="radio" name="status" id="active" value="Active" checked>
     </div>
     <div class="form-check">
       <label class="form-check-label" for="inactive">Inactive</label>
-      <input class="form-check-input" type="radio" name="status" id="inactive">
+      <input class="form-check-input" type="radio" name="status" id="inactive" value="Inactive">
     </div>
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
