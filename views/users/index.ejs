@@ -11,13 +11,17 @@
     </tr>
   </thead>
   <tbody>
+    <% if(users.length > 0) { %>
     <% users.forEach(user => { %>
     <tr>
       <td><%= user.name %></td>
       <td><%= user.email %></td>
       <td><%= user.gender %></td>
-      <td><%= user.status %> <i class="fas fa-circle <%- ((user.status) === "1") ? 'text-success' : 'text-danger' %>"></i></td>
+      <td><%= user.status ? 'Active' : 'Inactive' %> <i class="fas fa-circle <%- user.status ? 'text-success' : 'text-danger' %>"></i></td>
     </tr>
     <% }) %>
+    <% } else { %>
+    <td class="text-center" colspan="4">No users</td>
+    <% } %>
   </tbody>
 </table>
