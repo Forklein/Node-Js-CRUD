@@ -21,3 +21,9 @@ exports.indexRender = async (req, res) => {
 exports.createRender = (req, res) => {
     res.render('users/create');
 }
+
+exports.showRender = async (req, res) => {
+    const user = Userdb.findById(req.params.id);
+    const response = await user;
+    res.render('users/show', { user: response });
+}

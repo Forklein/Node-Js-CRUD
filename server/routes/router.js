@@ -13,6 +13,8 @@ route.get('/users', services.indexRender);
 
 route.get('/users/create', services.createRender);
 
+route.get('/users/:id', services.showRender);
+
 //API
 
 route.get('/api/users', userController.find);
