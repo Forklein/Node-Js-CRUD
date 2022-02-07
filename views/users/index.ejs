@@ -20,8 +20,8 @@
       <td><%= user.gender %> <i class="fas fa-<%- (user.gender === 'Male') ? 'mars text-primary' : 'venus text-danger'%>"></i></td>
       <td><%= user.status ? 'Active' : 'Inactive' %> <i class="fas fa-circle <%- user.status ? 'text-success' : 'text-danger' %>"></i></td>
       <td>
-        <a class="text-decoration-none link-secondary text-purple" href="/users/<%= user.id %> "><i class="fas fa-eye pointer"></i></a>
-        <i class="fas fa-edit text-secondary pointer"></i>
+        <a class="text-decoration-none link-secondary text-purple" href="/users/<%= user.id %>"><i class="fas fa-eye pointer"></i></a>
+        <a class="text-decoration-none" href="/users/<%= user.id %>/edit"><i class="fas fa-edit text-secondary pointer"></i></a>
         <i class="fas fa-trash-alt text-danger pointer"></i>
       </td>
     </tr>

@@ -15,6 +15,8 @@ route.get('/users/create', services.createRender);
 
 route.get('/users/:id', services.showRender);
 
+route.get('/users/:id/edit/', services.editRender);
+
 //API
 
 route.get('/api/users', userController.find);

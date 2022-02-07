@@ -1,0 +1,32 @@
+<%-contentFor('title')%>Edit
+<%-contentFor('section')%>
+<form method="POST" action="http://localhost:3000/api/users/create">
+  <div class="mb-3">
+    <label for="name" class="form-label">Name</label>
+    <input type="text" class="form-control" id="name" name="name" value="<%= user.name %> ">
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input type="email" class="form-control" id="email" name="email" value="<%= user.email %> ">
+  </div>
+  <div class="mb-3">
+    <label for="gender" class="form-label">Name</label>
+    <select name="gender" id="gender" class="form-select">
+      <option <% if(user.gender === 'Male') { %> selected <% } %> value="Male">Male</option>
+      <option <% if(user.gender === 'Female') { %> selected <% } %>value="Female">Female</option>
+    </select>
+  </div>
+  <div class="mb-3">
+    Status
+    <div class="form-check">
+      <label class="form-check-label" for="active">Active</label>
+      <input class="form-check-input" type="radio" name="status" id="active" value="1" <% if(user.status) { %> checked <% } %>>
+    </div>
+    <div class="form-check">
+      <label class="form-check-label" for="inactive">Inactive</label>
+      <input class="form-check-input" type="radio" name="status" id="inactive" value="0" <% if(!user.status) { %> checked <% } %>>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+  <a href="/users" class="btn btn-primary">Back</a>
+</form>
