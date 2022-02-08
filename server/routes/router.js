@@ -19,7 +19,7 @@ route.get('/users/:id/edit/', services.editRender);
 
 //API
 
-route.get('/api/users', userController.find);
+// route.get('/api/users', userController.find);
 route.post('/api/users/create', userController.create);
 
 module.exports = route;
