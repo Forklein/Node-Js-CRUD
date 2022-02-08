@@ -29,8 +29,14 @@ exports.find = async (req, res) => {
     return res.send(response);
 }
 
-exports.update = (req, res) => {
-
+exports.update = async (req, res) => {
+    const user = await Userdb.findByIdAndUpdate(req.params.id, {
+        name: req.body.name,
+        email: req.body.email,
+        gender: req.body.gender,
+        status: req.body.status
+    })
+    res.status(200).send({ message: 'Update successfully' });
 }
 
 exports.delete = async (req, res) => {
