@@ -33,6 +33,14 @@ exports.update = (req, res) => {
 
 }
 
-exports.delete = (req, res) => {
-
+exports.delete = async (req, res) => {
+    try {
+        const user = await Userdb.findById(req.params.id);
+        if (user) {
+            user.delete();
+            res.status(200).send({ message: 'Delete successfully' });
+        }
+    } catch (e) {
+        res.status(500).send({ message: e.message || 'Something went wrong' })
+    }
 }

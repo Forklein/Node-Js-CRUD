@@ -21,5 +21,6 @@ route.get('/users/:id/edit/', services.editRender);
 
 // route.get('/api/users', userController.find);
 route.post('/api/users/create', userController.create);
+route.delete('/api/users/:id', userController.delete);
 
 module.exports = route;
