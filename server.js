@@ -10,9 +10,11 @@ const bodyParser = require('body-parser');
 const expressLayouts = require('express-ejs-layouts');
 //# For router
 const route = require('./server/routes/router');
+//# for Override
+const methodOverride = require('method-override');
 //# Connect DB MONGO
 const connectDB = require('./server/database/connection');
-
+//# path node core module
 const path = require('path');
 
 const app = express();
@@ -39,6 +41,9 @@ app.use('/js', express.static(path.resolve(__dirname, 'assets/js')));
 
 //!connect DB
 connectDB();
+
+//! Use methodOverride
+app.use(methodOverride('_method'));
 
 //! Use Router
 app.use(route);

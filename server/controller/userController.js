@@ -36,7 +36,8 @@ exports.update = async (req, res) => {
         gender: req.body.gender,
         status: req.body.status
     })
-    res.status(200).send({ message: 'Update successfully' });
+    // res.status(200).send({ message: 'Update successfully' });
+    return res.redirect('/users');
 }
 
 exports.delete = async (req, res) => {
@@ -44,7 +45,8 @@ exports.delete = async (req, res) => {
         const user = await Userdb.findById(req.params.id);
         if (user) {
             user.delete();
-            res.status(200).send({ message: 'Delete successfully' });
+            // res.status(200).send({ message: 'Delete successfully' });
+            return res.redirect('/users');
         }
     } catch (e) {
         res.status(500).send({ message: e.message || 'Something went wrong' })
